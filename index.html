@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manasa Priya Morla | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #14213d;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h2 {
+            color: #75b9ff;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #75b9ff;
+        }
+
+        section {
+            padding: 70px 8%;
+        }
+
+        .home {
+            min-height: 90vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            background: linear-gradient(135deg, #eef4ff, white);
+        }
+
+        .home-text {
+            max-width: 650px;
+        }
+
+        .home h1 {
+            font-size: 45px;
+            margin: 15px 0;
+        }
+
+        .home h1 span {
+            color: #2457d6;
+        }
+
+        .home p {
+            color: #526176;
+            font-size: 18px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 22px;
+            background: #2457d6;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #163b99;
+        }
+
+        .profile {
+            width: 280px;
+            height: 280px;
+            background: #2457d6;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 70px;
+            font-weight: bold;
+            box-shadow: 0 10px 30px #b8c8e8;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+            font-size: 30px;
+            color: #163b99;
+        }
+
+        .about-container,
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px #dce2ee;
+        }
+
+        .card h3 {
+            color: #2457d6;
+            margin-bottom: 12px;
+        }
+
+        .education-item {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 5px solid #2457d6;
+            border-radius: 8px;
+        }
+
+        .education-item h3 {
+            color: #163b99;
+        }
+
+        .education-item p {
+            color: #64748b;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .skill {
+            background: #dce8ff;
+            color: #23469b;
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .project-container,
+        .certificate-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .project-card,
+        .certificate-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px #dce2ee;
+            transition: 0.3s;
+        }
+
+        .project-card:hover,
+        .certificate-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .project-card h3,
+        .certificate-card h3 {
+            color: #2457d6;
+            margin: 10px 0;
+        }
+
+        .project-card p,
+        .certificate-card p {
+            color: #64748b;
+        }
+
+        .contact-item {
+            margin: 15px 0;
+        }
+
+        .contact-item strong {
+            color: #2457d6;
+        }
+
+        .contact-item a {
+            color: #172033;
+            text-decoration: none;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input,
+        textarea {
+            padding: 12px;
+            border: 1px solid #ccd5e5;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        textarea {
+            height: 130px;
+        }
+
+        button {
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        footer {
+            background: #14213d;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 850px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 8px;
+                font-size: 14px;
+            }
+
+            .home {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 60px;
+            }
+
+            .home h1 {
+                font-size: 35px;
+            }
+
+            .about-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .project-container,
+            .certificate-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 550px) {
+            .project-container,
+            .certificate-container {
+                grid-template-columns: 1fr;
+            }
+
+            .profile {
+                width: 200px;
+                height: 200px;
+                font-size: 50px;
+            }
+
+            section {
+                padding: 50px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h2>Manasa Priya</h2>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Home -->
+    <section class="home" id="home">
+
+        <div class="home-text">
+            <p>Computer Science & Engineering Student</p>
+
+            <h1>
+                Hello, I'm <span>Manasa Priya Morla</span>
+            </h1>
+
+            <p>
+                Aspiring software developer with knowledge of Python,
+                Java, Artificial Intelligence, Machine Learning,
+                Data Science, Data Analytics, and Cybersecurity.
+            </p>
+
+            <a href="#projects" class="btn">
+                View My Projects
+            </a>
+        </div>
+
+        <div class="profile">
+            MP
+        </div>
+
+    </section>
+
+    <!-- About -->
+    <section id="about">
+
+        <h2 class="section-title">About Me</h2>
+
+        <div class="about-container">
+
+            <div class="card">
+                <h3>Professional Summary</h3>
+
+                <p>
+                    I am a Computer Science and Engineering student
+                    interested in software development, problem solving,
+                    and emerging technologies.
+
+                    I am looking for opportunities to apply my technical
+                    skills and gain practical industry experience.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Career Goals</h3>
+
+                <p>
+                    My short-term goal is to secure a good campus placement.
+                    My long-term goal is to become a skilled software
+                    developer.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+
+        <h2 class="section-title">Education</h2>
+
+        <div class="education-item">
+            <h3>Vignan University</h3>
+            <p>B.Tech – Computer Science & Engineering, 3rd Year</p>
+            <strong>CGPA: 7.78</strong>
+        </div>
+
+        <div class="education-item">
+            <h3>Sr Junior College</h3>
+            <p>Intermediate – 12th Class</p>
+            <strong>Marks: 860</strong>
+        </div>
+
+        <div class="education-item">
+            <h3>Bhashayam School, Bapatla</h3>
+            <p>SSC – 10th Class</p>
+            <strong>Marks: 532</strong>
+        </div>
+
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+
+        <h2 class="section-title">Technical Skills</h2>
+
+        <div class="skills">
+            <span class="skill">Python</span>
+            <span class="skill">Java</span>
+            <span class="skill">Artificial Intelligence</span>
+            <span class="skill">Machine Learning</span>
+            <span class="skill">Data Science</span>
+            <span class="skill">Data Analytics</span>
+            <span class="skill">Cybersecurity</span>
+            <span class="skill">MS Office</span>
+            <span class="skill">Problem Solving</span>
+            <span class="skill">Teamwork</span>
+            <span class="skill">Communication</span>
+        </div>
+
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+
+        <h2 class="section-title">Academic Projects</h2>
+
+        <div class="project-container">
+
+            <div class="project-card">
+                <h3>Titanic Survival Prediction</h3>
+                <p>
+                    Machine learning project that predicts passenger
+                    survival using dataset features.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>Movie Rating Prediction</h3>
+                <p>
+                    Python-based project for analyzing movie data
+                    and predicting ratings.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>Iris Flower Classification</h3>
+                <p>
+                    Classification project that identifies iris
+                    flower species using flower measurements.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>Sales Prediction</h3>
+                <p>
+                    Python project focused on analyzing sales data
+                    and predicting sales patterns.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>Credit Card Fraud Detection</h3>
+                <p>
+                    Machine learning project for identifying
+                    potentially fraudulent transactions.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications">
+
+        <h2 class="section-title">Certifications</h2>
+
+        <div class="certificate-container">
+
+            <div class="certificate-card">
+                <h3>Google Coursera</h3>
+                <p>Introduction to AI</p>
+            </div>
+
+            <div class="certificate-card">
+                <h3>Microsoft Learn</h3>
+                <p>Introduction to AI Concepts</p>
+            </div>
+
+            <div class="certificate-card">
+                <h3>Microsoft Learn</h3>
+                <p>Introduction to Machine Learning Concepts</p>
+            </div>
+
+            <div class="certificate-card">
+                <h3>HP LIFE</h3>
+                <p>Introduction to Cybersecurity Awareness</p>
+            </div>
+
+            <div class="certificate-card">
+                <h3>Forage</h3>
+                <p>Cybersecurity Job Simulation</p>
+            </div>
+
+            <div class="certificate-card">
+                <h3>Forage</h3>
+                <p>Data Science Job Simulation</p>
+            </div>
+
+            <div class="certificate-card">
+                <h3>Forage</h3>
+                <p>Data Analytics Job Simulation</p>
+            </div>
+
+            <div class="certificate-card">
+                <h3>TCS iON</h3>
+                <p>Master Data Management for Beginners</p>
+            </div>
+
+            <div class="certificate-card">
+                <h3>AI Tools & ChatGPT Workshop</h3>
+                <p>Workshop Certification</p>
+            </div>
+
+            <div class="certificate-card">
+                <h3>Cisco</h3>
+                <p>Python Essentials</p>
+            </div>
+
+            <div class="certificate-card">
+                <h3>Cisco</h3>
+                <p>Java Essentials</p>
+            </div>
+
+            <div class="certificate-card">
+                <h3>Springboard</h3>
+                <p>Python Course</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+
+        <h2 class="section-title">Contact Me</h2>
+
+        <div class="contact-container">
+
+            <div class="card">
+
+                <div class="contact-item">
+                    <strong>Phone:</strong><br>
+                    <a href="tel:6301617050">6301617050</a>
+                </div>
+
+                <div class="contact-item">
+                    <strong>Email:</strong><br>
+                    <a href="mailto:vu.241fa04c32@gmail.com">
+                        vu.241fa04c32@gmail.com
+                    </a>
+                </div>
+
+                <div class="contact-item">
+                    <strong>University:</strong><br>
+                    Vignan University
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <form onsubmit="sendMessage(event)">
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Your Name"
+                        required
+                    >
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Your Email"
+                        required
+                    >
+
+                    <textarea
+                        id="message"
+                        placeholder="Your Message"
+                        required
+                    ></textarea>
+
+                    <button class="btn" type="submit">
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            © <span id="year"></span>
+            Manasa Priya Morla. All Rights Reserved.
+        </p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+        function sendMessage(event) {
+
+            event.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let message = document.getElementById("message").value;
+
+            let subject = encodeURIComponent(
+                "Portfolio Contact from " + name
+            );
+
+            let body = encodeURIComponent(
+                "Name: " + name +
+                "\nEmail: " + email +
+                "\n\nMessage: " + message
+            );
+
+            window.location.href =
+                "mailto:vu.241fa04c32@gmail.com?subject="
+                + subject + "&body=" + body;
+
+        }
+
+    </script>
+
+</body>
+</html>
